@@ -1,0 +1,180 @@
+/* Estilos gerais */
+.filtro-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.titulo-gerais {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #4B0082;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.titulo-gerais .icons {
+    width: 28px;
+    height: 28px;
+    filter: invert(25%) sepia(90%) saturate(2596%) hue-rotate(260deg) brightness(90%) contrast(90%);
+    transition: transform 0.3s ease;
+}
+
+.titulo-gerais:hover .icons {
+    transform: rotate(90deg);
+}
+
+/* Container de filtro */
+.opcoes-filtro {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(106, 90, 205, 0.1);
+    border: 1px solid #e8e3ff;
+}
+
+.opcoes-filtro.show {
+    display: flex;
+}
+
+/* Header do filtro */
+.filtro-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filtro-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #6A5ACD;
+    padding-left: 8px;
+}
+
+.filtro-underline {
+    height: 2px;
+    width: 60px;
+    background: linear-gradient(90deg, #8A2BE2, #9370DB);
+    border-radius: 2px;
+}
+
+/* Botões de cômodos */
+.filtro-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.opcoes-filtro .room {
+    background: white;
+    position: relative;
+    min-width: 160px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    border-radius: 12px;
+    border: 1px solid #e8e3ff;
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.opcoes-filtro .room img {
+    width: 20px;
+    height: 20px;
+    filter: invert(25%) sepia(90%) saturate(2596%) hue-rotate(260deg) brightness(90%) contrast(90%);
+    transition: all 0.3s ease;
+}
+
+.opcoes-filtro .room h3 {
+    margin: 0;
+    color: #4B0082;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.opcoes-filtro .room:hover {
+    background: #f9f7ff;
+    border-color: #d0c4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(138, 43, 226, 0.15);
+}
+
+.opcoes-filtro .room:hover img {
+    filter: invert(15%) sepia(90%) saturate(3596%) hue-rotate(260deg) brightness(80%) contrast(90%);
+}
+
+.opcoes-filtro .room.active {
+    background: linear-gradient(135deg, #8A2BE2, #6A5ACD);
+    border-color: #8A2BE2;
+}
+
+.opcoes-filtro .room.active h3,
+.opcoes-filtro .room.active img {
+    color: white;
+    filter: brightness(0) invert(1);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .opcoes-filtro {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .filtro-buttons {
+        overflow-x: auto;
+        padding-bottom: 10px;
+        flex-wrap: nowrap;
+        scrollbar-width: thin;
+        scrollbar-color: #8A2BE2 #f0ebff;
+    }
+    
+    .filtro-buttons::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .filtro-buttons::-webkit-scrollbar-track {
+        background: #f0ebff;
+        border-radius: 10px;
+    }
+    
+    .filtro-buttons::-webkit-scrollbar-thumb {
+        background-color: #8A2BE2;
+        border-radius: 10px;
+    }
+    
+    .opcoes-filtro .room {
+        min-width: 140px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .titulo-gerais {
+        font-size: 24px;
+    }
+    
+    .opcoes-filtro {
+        padding: 16px;
+    }
+    
+    .filtro-label {
+        font-size: 16px;
+    }
+    
+    .opcoes-filtro .room {
+        min-width: 120px;
+        padding: 10px 16px;
+    }
+}

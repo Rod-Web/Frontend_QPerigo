@@ -1,0 +1,161 @@
+/* Header Container */
+header {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 40px;
+  background-color: #8a6bb6;
+  font-family: 'Sniglet', cursive;
+  text-align: center;
+
+}
+
+.contain-logo img {
+  height: 100px;
+  margin-left: 20px;
+}
+
+.box-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 20px;
+}
+
+nav ul {
+  display: flex;
+  gap: 50px;
+  font-size: 35px;
+  list-style-type: none;
+  font-family: 'Sniglet', cursive;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  transition: 0.5s ;
+}
+
+nav ul li:hover {
+  opacity: 0.93;
+  transform: scale(0.99);
+}
+
+nav ul li a {
+  color: #FEF5F9;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #FEF5F9;
+  transition: width 0.5s ease-out;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+  opacity: 0.93;
+  transform: scale(0.99);
+}
+
+nav ul li .active {
+  font-weight: 800;
+}
+
+
+
+
+/* Estilos para o container de pesquisa */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo para o input de pesquisa */
+.search-input {
+  padding: 10px 15px;
+  /* Posicionamento*/
+  padding-right: 40px; 
+  /*-------------*/
+  border: none;
+  border-radius: 25px;
+  font-size: 22px;
+  font-family: 'Sniglet', cursive;
+  background-color: #FEF5F9;
+  color: #333;
+  outline: none;
+  width: 500px;
+  height: 65px;
+  transition: width 0.3s ease;
+}
+
+.search-input:focus {
+  width: 550px;
+  height: 70px;
+}
+
+.search-input::placeholder {
+  font-size: 22px;
+}
+
+.search-button {
+  /* Posicionamento*/
+  position: absolute;
+  right: 10px;
+  /*-------------*/
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #8a6bb6;
+  padding: 5px;
+  
+}
+
+.search-button:hover {
+  color: #6a4f96;
+}
+
+
+/* Modifica o botão de limpar padrão */
+.search-input::-webkit-search-cancel-button {
+
+  position: relative;
+  right: 10px;
+  margin-left: -8px;
+
+  -webkit-appearance: none;
+  appearance: none;
+
+  height: 30px;
+  width: 30px;
+
+  background-color:#8a6bb6;
+
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+
+}
+.search-input::-webkit-search-cancel-button:hover {
+  background-color: #6a4f96; /* Cor roxa mais escura */
+}
+
+
+@media (max-width: 1200px) {
+
+  header {
+    flex-direction: column;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+}
