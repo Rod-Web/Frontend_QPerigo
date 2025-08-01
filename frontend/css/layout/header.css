@@ -3,7 +3,7 @@ header {
   display: flex;
   justify-content:space-between;
   align-items: center;
-  padding: 40px;
+  padding: 20px;
   background-color: #8a6bb6;
   font-family: 'Sniglet', cursive;
   text-align: center;
@@ -11,7 +11,7 @@ header {
 }
 
 .contain-logo img {
-  height: 100px;
+  height: 10vh;
   margin-left: 20px;
 }
 
@@ -26,7 +26,7 @@ header {
 nav ul {
   display: flex;
   gap: 50px;
-  font-size: 35px;
+  font-size: 25px;
   list-style-type: none;
   font-family: 'Sniglet', cursive;
   justify-content: center;
@@ -92,14 +92,15 @@ nav ul li .active {
   background-color: #FEF5F9;
   color: #333;
   outline: none;
-  width: 500px;
-  height: 65px;
+  width: 400px;
+  height: 45px;
   transition: width 0.3s ease;
+  
 }
 
 .search-input:focus {
-  width: 550px;
-  height: 70px;
+  width: 450px;
+  height: 50px;
 }
 
 .search-input::placeholder {
@@ -156,6 +157,30 @@ nav ul li .active {
 
   .search-input {
     width: 100%;
+  }
+
+}
+
+@media (max-width: 720px) {
+  .box-navigation {
+    flex-direction: column;
+  }
+
+  .search-input {
+    padding: 2px 15px;
+  }
+
+  .search-input::-webkit-search-cancel-button {
+    display: none;
+  }
+
+  .search-input:focus {
+    width: auto;
+  }
+
+  .search-button {
+    background-color: #FEF5F9;
+    border-radius: 15px;
   }
 
 }
