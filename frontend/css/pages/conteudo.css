@@ -1,0 +1,56 @@
+.container-imagem-video {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  height: 82vh;
+
+}
+
+.container-imagem-video img {
+  border-radius: 20px;
+  height: 80vh;
+    box-shadow: 
+    0 0 15px rgba(100, 149, 237, 0.8), /* Azul */
+    0 0 30px rgba(147, 112, 219, 0.6); /* Roxo */
+  transition: all 0.4s ease;
+
+}
+
+.container-imagem-video img:hover {
+  opacity: 0.9;
+  transform: translateY(-1%);
+  height: 79vh;
+}
+
+.titulo-principal {
+  font-family: 'Shanti', cursive;
+  line-height: 48px;
+  font-size: 32px;
+  color: #352E37;
+  letter-spacing: 1px;
+  margin-left: 20px;
+  position: relative;
+  display: inline-flex;
+  transition: transform 0.5s ease-out;
+}
+
+.titulo-principal::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color:#352E37;
+  left: 0;
+  bottom: 0;
+  transition: width 0.5s ease-out;
+}
+
+.titulo-principal:hover {
+    transform: translateY(20%);
+    transform: translateX(10%);
+
+}
+.titulo-principal:hover::after {
+  width: 100%;
+}
+

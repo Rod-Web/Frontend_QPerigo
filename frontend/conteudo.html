@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/frontend/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts (Sniglet, Shanti e Sansation) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shanti&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sansation&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+     <!-- Estilos -->
+
+    <link rel="stylesheet" href="/frontend/css/base/reset.css">
+
+    <link rel="stylesheet" href="/frontend/css/pages/conteudo.css">
+
+    <link rel="stylesheet" href="/frontend/css/layout/header.css">
+    <link rel="stylesheet" href="/frontend/css/layout/main.css">
+
+    <link rel="stylesheet" href="/frontend/css/components/conteudo/botao-voltar.css">
+    <link rel="stylesheet" href="/frontend/css/components/conteudo/carrossel-info.css">
+    <link rel="stylesheet" href="/frontend/css/components/global/rolagem-topo.css">
+
+    
+    <title>Conteúdos - Blog</title>
+
+    <script src="/frontend/js/components/conteudo/carrossel-info.js" defer></script>
+    <script src="/frontend/js/template/conteudo/informacoes-conteudo.js" type="module" defer></script>
+
+</head>
+<body>
+    <header>
+        <div class="contain-logo">
+            <a href="/frontend/index.html">
+                <img src="/frontend/assets/images/logo_q_perigo.png" alt="Logo Qperigo">
+            </a>
+        </div>
+        <div class="box-navigation">
+            <nav>
+                <ul>
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a href="/frontend/desenvolvedores.html">About Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-container">
+                    <input type="search" class="search-input" placeholder="Encontre o produto químico que busca..."> 
+                    <button type="button" class="search-button" aria-label="Pesquisar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                    </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <a href="/frontend/index.html">
+            <button class="return-page">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+        </a>
+
+        <button class="voltar-topo">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+
+        <div class="container-imagem-video">
+            <img src="/frontend/assets/images/skeletion/cover-temp.png" alt="Banner da matéria" class="img-produto">
+        </div>
+
+        <h2 class="titulo-principal">Título Principal</h2>
+
+        <section class="informacoes">
+            <div class="container-carrossel">
+                
+                <div class="carrossel" id="carrossel">
+                
+                    <div class="card">
+                        <h2>Introdução:</h2>
+                        <p class="content introducao">Carregando</p>
+                        <button class="toggle">Ler mais</button>
+                    </div>
+
+                    <div class="card">
+                        <h2>Composição:</h2>
+                        <p class="content composicao">Carregando...</p>
+                        <button class="toggle">Ler mais</button>
+                    </div>
+
+                    <div class="card">
+                        <h2>Combinação:</h2>
+                        <p class="content combinacoes">Carregando...</p>
+                        <button class="toggle">Ler mais</button>
+                    </div>
+
+                    <div class="card">
+                        <h2>Manipulação:</h2>
+                        <p class="content manipulacao">Carregando...</p>
+                        <button class="toggle">Ler mais</button>
+                    </div>
+
+                    <div class="card">
+                        <h2>Armazenamento:</h2>
+                        <p class="content armazenamento">Carregando...</p>
+                        <button class="toggle">Ler mais</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="nav-button prev">&#10094;</button>
+            <button class="nav-button next">&#10095;</button>
+
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const banners = document.querySelector('.contain-carrossel');
+    const images = document.querySelectorAll('.container-imagem-video img');
+    const prevBtn = document.querySelector('.carrossel-btn.prev');
+    const nextBtn = document.querySelector('.carrossel-btn.next');
+    const indicadores = document.querySelectorAll('.indicador');
+    const carrosselContainer = document.querySelector('.contain-carrossel'); // Container principal
+    
+    let currentIndex = 0;
+    const totalImages = images.length;
+    let intervalId;
+    
+    function updateCarrossel() {
+        banners.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Atualiza indicadores
+        indicadores.forEach((ind, index) => {
+            ind.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateCarrossel();
+    }
+    
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        updateCarrossel();
+    }
+    
+    // Inicia o autoplay
+    function startAutoPlay() {
+        intervalId = setInterval(nextSlide, 1800);
+    }
+    
+    // Para o autoplay
+    function stopAutoPlay() {
+        if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+    }
+    
+    // Event listeners para os botões
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoPlay(); // Pausa quando há interação manual
+    });
+    
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoPlay(); // Pausa quando há interação manual
+    });
+    
+    // Event listeners para os indicadores
+    indicadores.forEach((ind, index) => {
+        ind.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarrossel();
+            stopAutoPlay(); // Pausa quando há interação manual
+        });
+    });
+    
+    // Pausa quando o mouse entra no carrossel
+    carrosselContainer.addEventListener('mouseenter', stopAutoPlay);
+    
+    // Retoma quando o mouse sai
+    carrosselContainer.addEventListener('mouseleave', startAutoPlay);
+    
+    // Inicia o carrossel
+    startAutoPlay();
+});
+    </script>
+
+</body>
+</html>

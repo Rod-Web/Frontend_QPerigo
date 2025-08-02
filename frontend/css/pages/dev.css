@@ -1,0 +1,335 @@
+
+/* Container geral do About Us */
+.container-about-us {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-img {
+  width: 49%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.about-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about-data {
+  flex: 1;
+  padding: 50px;
+  max-width: 49%;
+  text-align: justify;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+.about-data .wrapper h1 {
+    font-family: 'Sniglet', cursive;
+    color: #423A47;
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  position: relative;
+  transition: transform 0.5s ease;
+
+}
+.about-data .wrapper h1::after {
+    width: 0;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: #423A47;
+    content: '';
+    position: absolute;
+    transition: width 0.5s ease;
+
+}
+
+.about-data .wrapper h1:hover::after {
+    width: 100%;
+}
+
+.about-data .wrapper h1:hover {
+    opacity: 0.7;
+    transform: translateX(10%);
+
+}
+
+.about-data p {
+    font-family: 'Sansation', cursive;
+    text-indent: 1em;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.base-social-media a {
+  margin-right: 15px;
+  font-size: 1.5rem;
+  color: #282828;
+  transition: color 0.3s;
+}
+
+.base-social-media a:hover {
+  background-color: #423A47;
+  color: white;
+  border-radius: 100%;
+}
+
+/* Sobre o Projeto */
+.about-project {
+  padding: 40px 20px;
+  background: linear-gradient(#CEC6DA, #928B9D);
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+.title-projet {
+    color: #423A47;
+    font-family: 'Sniglet', cursive;
+  font-size: 34px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.description-project {
+  font-size: 18px;
+  font-family: 'Sansation', cursive;
+  line-height: 48px;
+  letter-spacing: 1px;
+  text-align: left;
+  text-indent: 1em;
+  margin-bottom: 40px;
+}
+
+/* Objetivos */
+.base-objectives {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.objective {
+  background-color: #49404B;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1;
+  max-width: 30%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.objective:hover {
+  transform: translateY(-10px);
+}
+
+.title-objetive h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 200;
+    line-height: 48px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    font-size: 25px;
+    color: white;
+}
+
+.title-objetive h2 {
+    font-family: 'Sniglet', cursive;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    color: white;
+}
+
+.objective p {
+    font-family: 'Sansation', cursive;
+    text-align: left;
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+    line-height: 48px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+
+}
+
+/* Título principal */
+.main-title {
+  font-weight: bold;
+  text-align: center;
+  color: #0cb100;
+  text-decoration: underline;
+}
+
+/* Descrição */
+.description {
+  width: 90%;
+  margin: 20px auto; /* Centraliza com margem automática */
+  font-size: 18px;
+}
+
+/* Equipe responsável */
+.container-team {
+  text-align: center;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* Título da equipe */
+.container-team h1 {
+  padding: 20px;
+  font-size: 34px;
+}
+
+/* Cards da equipe */
+.container-cards {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  max-width: 100%;
+}
+
+/* Card individual */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px; /* Ajusta a largura para ficar mais responsivo */
+  height: auto;
+  text-align: center;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar os cards */
+}
+
+.card h4 {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Texto do card */
+.card p {
+  font-size: 14px;
+  margin: 5px;
+}
+
+/* Imagem dos membros */
+.img-member {
+  width: 120px; /* Tamanho adequado para telas menores */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+/* Descrição do projeto e instituição */
+.project-description,
+.institution {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 20px 0;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .container-about-us {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-img {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .about-data {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .title-projet {
+    font-size: 30px;
+  }
+
+  .description-project {
+    font-size: 16px;
+  }
+
+  .base-objectives {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .objective {
+    max-width: 100%;
+    flex: 1;
+  }
+
+  .container-team {
+    padding: 15px;
+  }
+
+  .container-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .img-member {
+    width: 100px;
+    height: 100px;
+  }
+
+  .project-description,
+  .institution {
+    font-size: 16px;
+  }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  .description,
+  .project-description,
+  .institution {
+    font-size: 14px;
+  }
+
+  .container-team h1 {
+    font-size: 20px;
+  }
+
+  .card h4 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+
+}

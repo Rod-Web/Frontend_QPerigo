@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicia o autoplay
     function startAutoPlay() {
-        intervalId = setInterval(nextSlide, 1800);
+        intervalId = setInterval(nextSlide, 5500);
     }
     
     // Para o autoplay
