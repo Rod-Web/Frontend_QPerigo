@@ -7,6 +7,16 @@ export function cardGeral(data) {
     const badge = document.createElement('span');
     badge.className = 'card-badge';
     badge.textContent = `${data.acessos} visualizações`;
+    if(data.acessos == 0) {
+        badge.style.backgroundColor = 'red';
+    } else {
+        if(data.acessos == 1) {
+        badge.style.backgroundColor = 'yellow'
+        } else {
+        badge.style.backgroundColor = 'green'
+        }
+    }
+
     
     // Criar imagem do banner
 

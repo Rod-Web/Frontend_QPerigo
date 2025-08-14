@@ -120,6 +120,11 @@
   justify-content: space-between;
   gap: 20px;
 }
+@media (max-width: 700px) {
+
+    /* scrool dos cards "objetivo" */
+
+}
 
 .objective {
   background-color: #49404B;
@@ -188,13 +193,13 @@
   text-align: center;
   border-radius: 8px;
   padding: 20px;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 /* Título da equipe */
 .container-team h1 {
-  padding: 20px;
-  font-size: 34px;
+    font-family: 'Shanti', cursive;
+    font-size: 30px;
 }
 
 /* Cards da equipe */
@@ -203,19 +208,25 @@
   justify-content: center;
   gap: 15px;
   max-width: 100%;
+  margin-bottom: 20px;
 }
 
 /* Card individual */
 .card {
   display: flex;
   flex-direction: column;
-  width: 300px; /* Ajusta a largura para ficar mais responsivo */
+  width: 250px; /* Ajusta a largura para ficar mais responsivo */
   height: auto;
   text-align: center;
   border-radius: 8px;
   padding: 15px;
-  background-color: #fff;
+  background-color: #F4EFFA;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar os cards */
+  transition: transform 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-10%);
 }
 
 .card h4 {
@@ -235,6 +246,7 @@
   width: 120px; /* Tamanho adequado para telas menores */
   height: 120px;
   border-radius: 50%;
+    border: solid 1px black;
   object-fit: cover;
   margin: 0 auto;
   margin-top: 20px;
@@ -243,11 +255,51 @@
 /* Descrição do projeto e instituição */
 .project-description,
 .institution {
+    font-family: 'Shanti', cursive;
   text-align: center;
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 18px;
   margin: 20px 0;
 }
+
+.titule-equipe {
+    font-family: 'Shanti', cursive;
+    text-align: left;
+    font-size: 15px;
+}
+
+
+
+select {
+    display: flex;
+    justify-content: left;
+    border-radius: 15px;
+    margin: 15px 0 ;
+    padding: 5px;
+    font-family: 'Sniglet', cursive;
+}
+
+select option {
+    
+    font-family: 'Sniglet', cursive;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
