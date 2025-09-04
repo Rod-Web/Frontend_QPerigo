@@ -4,10 +4,18 @@
     padding: 0 20px;    /* Padding lateral de 20px */
 }
 
+.container-filtro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+}
+
 .titulo-gerais {
     display: flex;          /* Layout flexbox */
     align-items: center;    /* Alinha itens verticalmente */
     justify-content: space-between;
+    font-family: 'Segoe UI', sans-serif;
     gap: 10px;             /* Espaço entre elementos filhos */
     color: #4B0082;        /* Cor roxa escura */
     font-size: 28px;       /* Tamanho da fonte */
@@ -15,24 +23,16 @@
     font-weight: 700;      /* Negrito */
 }
 
-.titulo-gerais .icons {
+.icons {
     width: 28px;          /* Largura do ícone */
     height: 28px;         /* Altura do ícone */
     filter: invert(25%) sepia(90%) saturate(2596%) hue-rotate(260deg) brightness(90%) contrast(90%); /* Filtro para cor roxa */
     transition: transform 0.3s ease; /* Animação suave de rotação */
 }
 
-.titulo-gerais:hover .icons {
+.icons:hover {
     transform: rotate(90deg); /* Rotaciona ícone 90° no hover */
 }
-
-
-
-
-
-
-
-
 
 /* Container de filtro */
 .opcoes-filtro {
@@ -51,14 +51,6 @@
     display: flex; /* Mostra o filtro quando tem classe 'show' */
 }
 
-
-
-
-
-
-
-
-
 /* Header do filtro */
 .filtro-header {
     display: flex;          /* Layout flexbox */
@@ -71,6 +63,7 @@
     font-weight: 600;      /* Semi-negrito */
     color: #6A5ACD;       /* Cor roxa */
     padding-left: 8px;     /* Recuo esquerdo */
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .filtro-underline {
@@ -81,17 +74,12 @@
 }
 
 
-
-
-
-
-
-
-
 /* Botões de cômodos */
 .filtro-buttons {
     display: flex;       /* Layout flexbox */
     flex-wrap: wrap;    /* Quebra de linha quando necessário */
+    align-items: center;
+    justify-content: center;
     gap: 12px;          /* Espaço entre botões */
 }
 
