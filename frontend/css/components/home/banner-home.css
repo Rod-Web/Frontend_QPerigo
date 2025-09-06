@@ -4,6 +4,7 @@
             overflow: hidden;
             position: relative;
             margin-bottom: 20px;
+            box-shadow:5px 5px 10px 18px rgba(0, 0, 0, 0.09);
         }
         
         .contain-banners {
@@ -14,9 +15,9 @@
         .contain-banners img {
             width: 100%;
             flex-shrink: 0;
-            object-fit: contain; /* Mostra imagem inteira sem cortar */
-            height: auto;
-            display: block;
+            object-fit: cover; /* Mostra imagem inteira sem cortar */
+            height: 550px;
+            display:block;
         }
         
         /* Botões de navegação */

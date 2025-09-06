@@ -5,14 +5,14 @@ header {
   justify-content:space-between;
   align-items: center;
   padding: 20px;
-  background-color: #8a6bb6;
+  background-image: linear-gradient(90deg, #8f77b0, #8265a9, #5a3f7f);
   font-family: 'Sniglet', cursive;
   text-align: center;
-
+  height:70px;
 }
 
 .contain-logo img {
-  height: 10vh;
+  height: 8vh;
   margin-left: 20px;
 }
 
@@ -47,6 +47,7 @@ nav ul li a {
   color: #FEF5F9;
   position: relative;
   padding-bottom: 3px;
+  font-size: 20px;
 }
 
 nav ul li a::after {
@@ -103,7 +104,7 @@ nav ul li .active {
 }
 
 .search-input::placeholder {
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .search-button {
