@@ -1,11 +1,22 @@
 import { postagensFiltradas, aplicarFiltro, configurarToggleFiltro } from "./filtros.js";
 import { cardGeral } from "../template/home/card-geral.js";
+import { postagens } from "./api.js";
 export function atualizarPagina() {
     aplicarFiltro();
     configurarToggleFiltro();
     renderizarSecaoGeral();
 }
 
+export function renderizarSecaoDestaque() {
+        const container = document.querySelector(".cards-home-destaque");
+        const destaque = [...postagens]
+            .sort((a,b) => b.acessos - a.acessos).slice(0,6)
+        destaque.forEach(card => {
+            let cardfei = criarCardComListener(cardGeral(card), card.id_postagem)
+            container.appendChild(cardfei)
+        })
+        
+}
 export function renderizarSecaoGeral() {
     const container = document.querySelector(".cards-home-geral");
     const prevBtn = document.getElementById("prev-page");

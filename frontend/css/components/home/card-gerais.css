@@ -1,5 +1,5 @@
 /* ESTILOS GERAIS (todas as telas) */
-.cards-home-geral {
+.cards-home-geral, .cards-home-destaque {
   display: flex;
   justify-content: center;
   align-items: center;
