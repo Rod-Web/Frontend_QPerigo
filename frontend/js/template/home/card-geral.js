@@ -22,22 +22,8 @@ export function cardGeral(data) {
 
     const img = document.createElement('img');
     img.className = 'card-image';
-if (data.id_postagem == 23) {
-    img.src = "/frontend/assets/images/skeletion/covers/acetona.png";
-} else if (data.id_postagem == 16) {
-    img.src = "/frontend/assets/images/skeletion/covers/acido.png";
-} else if (data.id_postagem == 9) {
-    img.src = "/frontend/assets/images/skeletion/covers/alcool.png";
-} else if (data.id_postagem == 29) {
-
-}
-
-
-
-else
-{
     img.src = data.banner; // Usa o banner padrão para outros casos
-}
+
     
 
 

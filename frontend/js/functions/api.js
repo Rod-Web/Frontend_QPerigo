@@ -1,4 +1,4 @@
-const url = "https://backqperigo-production.up.railway.app/postagens";
+const url = "https://backend-qperigo.onrender.com/postagens";
 export let postagens = [];
 
 export async function carregarDados() {
