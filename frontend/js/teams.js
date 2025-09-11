@@ -49,17 +49,17 @@ const teamMembers = {
                 "role": "Desenvolvedor FullStack",
                 "image": "assets/images/team/",
                 "social": {
-                    "github": "#",
+                    "github": "https://github.com/Rod-Web",
                     "linkedin": "#",
                     "instagram": "#"
                 }
             },
             {
-                "name": "Mirela Santos de Amaral",
+                "name": "Mirela Santos de Amarante",
                 "role": "Desenvolvedora FullStack",
                 "image": "assets/images/team/",
                 "social": {
-                    "github": "#",
+                    "github": "https://github.com/Miih-Santos",
                     "linkedin": "#",
                     "instagram": "#"
                 }
@@ -69,8 +69,8 @@ const teamMembers = {
                 "role": "Desenvolvedor Back-end",
                 "image": "assets/images/teams/informatica/2025/vinicius.jpg",
                 "social": {
-                    "github": "#",
-                    "linkedin": "#",
+                    "github": "https://github.com/Martins-Vini",
+                    "linkedin": "",
                     "instagram": "#"
                 }
             },
@@ -79,7 +79,7 @@ const teamMembers = {
                 "role": "Desenvolvedor Front-end",
                 "image": "assets/images/teams/informatica/2025/trindade.jpg",
                 "social": {
-                    "github": "#",
+                    "github": "https://github.com/nicollastrindade",
                     "linkedin": "#",
                     "instagram": "#"
                 }
