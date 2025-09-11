@@ -1,93 +1,168 @@
+/* Variáveis de cores */
+:root {
+  --primary-color: #423A47;
+  --secondary-color: #928B9D;
+  --accent-color: #6D5D7A;
+  --light-color: #F4EFFA;
+  --dark-color: #282828;
+  --gradient-start: #CEC6DA;
+  --gradient-end: #928B9D;
+}
+
 /* Container geral do About Us */
 .container-about-us {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 40px 20px;
+  background-color: var(--light-color);
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .about-img {
-  width: 49%;
+  width: 48%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .about-img img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.about-img img:hover {
+  transform: scale(1.03);
 }
 
 .about-data {
   flex: 1;
-  padding: 50px;
-  max-width: 49%;
+  padding: 30px;
+  max-width: 48%;
   text-align: justify;
 }
 
 .wrapper {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .about-data .wrapper h1 {
   font-family: 'Sniglet', cursive;
-  color: #423A47;
-  font-size: 34px;
-  font-weight: 400;
-  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 800;
+  position: relative;
+  padding-bottom: 10px;
+}
 
+.about-data .wrapper h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
 }
 
 .about-data p {
-  font-family: 'Sansation', cursive;
+  font-family: 'Sansation', sans-serif;
   text-indent: 1em;
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  color: var(--dark-color);
+}
+
+.base-social-media {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
 }
 
 .base-social-media a {
-  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  margin: 0 12px;
   font-size: 1.5rem;
-  color: #282828;
-  transition: color 0.3s;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .base-social-media a:hover {
-  background-color: #423A47;
+  background-color: var(--accent-color);
   color: white;
-  border-radius: 100%;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Divisor */
+.divider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+  margin: 50px 20px;
+  border-radius: 2px;
 }
 
 /* Sobre o Projeto */
 .about-project {
-  padding: 40px 20px;
-  background: linear-gradient(#CEC6DA, #928B9D);
-  margin-top: 40px;
-  border-radius: 10px;
+  padding: 50px 30px;
+  background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
+  margin: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .title-projet {
-  color: #423A47;
+  color: var(--primary-color);
   font-family: 'Sniglet', cursive;
-  font-size: 34px;
-  font-weight: 400;
+  font-size: 2.5rem;
+  font-weight: 800;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.title-projet::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
 }
 
 .description-project {
-  font-size: 18px;
-  font-family: 'Sansation', cursive;
-  line-height: 48px;
-  letter-spacing: 1px;
-  text-align: left;
+  font-size: 1.1rem;
+  font-family: 'Sansation', sans-serif;
+  line-height: 1.7;
+  text-align: justify;
   text-indent: 1em;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  color: var(--dark-color);
 }
 
 /* Objetivos */
@@ -95,23 +170,32 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
-}
-
-@media (max-width: 700px) {
-
-  /* scrool dos cards "objetivo" */
-
+  gap: 25px;
 }
 
 .objective {
-  background-color: #49404B;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  background-color: var(--primary-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 25px;
   flex: 1;
   max-width: 30%;
   text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.objective::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform 0.3s ease;
 }
 
@@ -119,73 +203,111 @@
   transform: translateY(-10px);
 }
 
+.objective:hover::before {
+  transform: scaleX(1);
+}
+
+.title-objetive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .title-objetive h1 {
   font-family: 'Courier New', Courier, monospace;
-  font-weight: 200;
-  line-height: 48px;
-  letter-spacing: 1px;
-  vertical-align: middle;
-  font-size: 25px;
-  color: white;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-right: 15px;
 }
 
 .title-objetive h2 {
   font-family: 'Sniglet', cursive;
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 48px;
-  letter-spacing: 1px;
-  vertical-align: middle;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: white;
 }
 
 .objective p {
-  font-family: 'Sansation', cursive;
-  text-align: left;
-  font-size: 16px;
+  font-family: 'Sansation', sans-serif;
+  text-align: justify;
+  font-size: 1rem;
   color: white;
-  margin-top: 10px;
-  line-height: 48px;
-  letter-spacing: 1px;
-  vertical-align: middle;
-
-}
-
-/* Título principal */
-.main-title {
-  font-weight: bold;
-  text-align: center;
-  color: #0cb100;
-  text-decoration: underline;
-}
-
-/* Descrição */
-.description {
-  width: 90%;
-  margin: 20px auto;
-  /* Centraliza com margem automática */
-  font-size: 18px;
+  line-height: 1.6;
 }
 
 /* Equipe responsável */
 .container-team {
   text-align: center;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 10px;
+  border-radius: 12px;
+  padding: 30px 20px;
+  margin: 40px 20px;
+  background-color: var(--light-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container-team h1 {
+  font-family: 'Shanti', sans-serif;
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.container-team h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.team-section {
+  margin-bottom: 40px;
 }
 
 /* Título da equipe */
-.container-team h1 {
-  font-family: 'Shanti', cursive;
-  font-size: 30px;
+.titule-equipe {
+  font-family: 'Shanti', sans-serif;
+  text-align: left;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 20px 0 15px;
+}
+
+/* Select */
+select {
+  display: block;
+  width: 150px;
+  border-radius: 25px;
+  margin: 15px 0 25px;
+  padding: 10px 15px;
+  font-family: 'Sniglet', cursive;
+  border: 2px solid var(--secondary-color);
+  background-color: white;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(109, 93, 122, 0.2);
 }
 
 /* Cards da equipe */
 .container-cards {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  flex-wrap: wrap;
+  gap: 25px;
   max-width: 100%;
   margin-bottom: 20px;
 }
@@ -195,105 +317,198 @@
   display: flex;
   flex-direction: column;
   width: 250px;
-  /* Ajusta a largura para ficar mais responsivo */
-  height: auto;
   text-align: center;
-  border-radius: 8px;
-  padding: 15px;
-  background-color: #F4EFFA;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* Adiciona sombra para destacar os cards */
-  transition: transform 0.5s ease;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10%);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
 }
 
 .card h4 {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #666;
+  margin: 15px 0 5px;
+  font-family: 'Shanti', sans-serif;
+  font-size: 1.2rem;
+  color: var(--primary-color);
 }
 
-/* Texto do card */
 .card p {
-  font-size: 14px;
-  margin: 5px;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin: 0;
+  font-family: 'Sansation', sans-serif;
 }
 
 /* Imagem dos membros */
 .img-member {
   width: 120px;
-  /* Tamanho adequado para telas menores */
   height: 120px;
   border-radius: 50%;
-  border: solid 1px black;
+  border: 3px solid var(--accent-color);
   object-fit: cover;
   margin: 0 auto;
-  margin-top: 20px;
+  transition: all 0.3s ease;
 }
 
-/* Descrição do projeto e instituição */
-.project-description,
-.institution {
-  font-family: 'Shanti', cursive;
-  text-align: center;
-  font-weight: 400;
-  font-size: 18px;
-  margin: 20px 0;
+.card:hover .img-member {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.titule-equipe {
-  font-family: 'Shanti', cursive;
-  text-align: left;
-  font-size: 15px;
+/*FOOTER*/
+.project-footer {
+  padding: 40px 20px;
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  color: white;
+  margin-top: 60px;
+  border-radius: 12px 12px 0 0;
 }
 
-
-
-select {
+.footer-content {
   display: flex;
-  justify-content: left;
-  border-radius: 15px;
-  margin: 15px 0;
-  padding: 5px;
-  font-family: 'Sniglet', cursive;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
 }
 
-select option {
-
-  font-family: 'Sniglet', cursive;
-
+.footer-section {
+  flex: 1;
+  min-width: 300px;
 }
 
+.footer-title {
+  font-family: 'Sniglet', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
 
+.footer-title i {
+  margin-right: 10px;
+  color: var(--light-color);
+}
 
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--light-color);
+  border-radius: 2px;
+}
 
+.project-info {
+  font-family: 'Sansation', sans-serif;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: justify;
+}
 
+.institution-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
+.institution-name {
+  font-family: 'Shanti', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--light-color);
+  display: flex;
+  align-items: center;
+}
 
+.institution-name i {
+  margin-right: 10px;
+}
 
+.institution-details {
+  font-family: 'Sansation', sans-serif;
+  font-size: 1rem;
+  margin-left: 28px;
+}
 
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Sansation', sans-serif;
+  font-size: 0.9rem;
+  color: var(--light-color);
+}
 
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-
-
-
-
-
+.container-about-us,
+.about-project,
+.container-team {
+  animation: fadeIn 0.8s ease-out;
+}
 
 /* Responsividade para telas menores */
+@media (max-width: 992px) {
+  .objective {
+    max-width: 45%;
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .container-about-us {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin: 10px;
+    padding: 20px 15px;
   }
 
   .about-img {
     width: 100%;
     padding: 10px 0;
+    margin-bottom: 20px;
   }
 
   .about-data {
@@ -302,69 +517,109 @@ select option {
     padding: 15px;
   }
 
+  .about-data .wrapper h1 {
+    font-size: 2rem;
+  }
+
+  .about-data p {
+    font-size: 1rem;
+  }
+
+  .about-project {
+    padding: 30px 20px;
+    margin: 30px 10px;
+  }
+
   .title-projet {
-    font-size: 30px;
+    font-size: 2rem;
   }
 
   .description-project {
-    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .base-objectives {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
 
   .objective {
     max-width: 100%;
-    flex: 1;
   }
 
   .container-team {
-    padding: 15px;
+    padding: 20px 15px;
+    margin: 30px 10px;
+  }
+
+  .container-team h1 {
+    font-size: 1.8rem;
   }
 
   .container-cards {
     flex-direction: column;
+    align-items: center;
     gap: 20px;
   }
 
   .card {
     width: 100%;
-    max-width: 100%;
+    max-width: 300px;
   }
 
+  .titule-equipe {
+    text-align: center;
+  }
+
+  select {
+    margin: 15px auto;
+  }
+  
+  /* Responsividade para footer */
+  .footer-content {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .footer-section {
+    min-width: 100%;
+  }
+  
+  .footer-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-data .wrapper h1 {
+    font-size: 1.8rem;
+  }
+  
+  .title-projet {
+    font-size: 1.8rem;
+  }
+  
+  .container-team h1 {
+    font-size: 1.6rem;
+  }
+  
+  .title-objetive {
+    flex-direction: column;
+  }
+  
+  .title-objetive h1 {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
   .img-member {
     width: 100px;
     height: 100px;
   }
-
+  
   .project-description,
   .institution {
-    font-size: 16px;
+    font-size: 1rem;
   }
-}
-
-/* Responsividade para telas muito pequenas */
-@media (max-width: 480px) {
-
-  .description,
-  .project-description,
-  .institution {
-    font-size: 14px;
-  }
-
-  .container-team h1 {
-    font-size: 20px;
-  }
-
-  .card h4 {
-    font-size: 18px;
-  }
-
-  .card p {
-    font-size: 14px;
-  }
-
-
 }
