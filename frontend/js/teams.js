@@ -1,7 +1,7 @@
 const membros = [
     { nome: "Rodrigo Valentim de Araujo", funcao: "Desenvolvedor FullStack", foto: "", turma: "informática para internet", ano: "2025" },
     { nome: "Mirela Santos de Amaral", funcao: "Desenvolvedor FullStack", foto: "", turma: "informática para internet", ano: "2025" },
-    { nome: "Vinícius Martins de Paiva", funcao: "Desenvolvedor Back-end", foto: "", turma: "informática para internet", ano: "2025" },
+    { nome: "Vinícius Martins de Paiva", funcao: "Desenvolvedor Back-end", foto: "/frontend/assets/images/teams/informatica/2025/vinicius.jpg", turma: "informática para internet", ano: "2025" },
     { nome: "Nicollas Trindade", funcao: "Desenvolvedor Front-end", foto: "", turma: "informática para internet", ano: "2025" },
     
     
