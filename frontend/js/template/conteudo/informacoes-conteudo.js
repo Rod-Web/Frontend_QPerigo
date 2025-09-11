@@ -48,6 +48,7 @@ function atualizarHTML(post_filtrado) {
     document.title = post_filtrado.nome_produto;
 
     const bannerPost = document.querySelector('.img-produto');
+  /*
     if(post_filtrado.id_postagem == 23){
         bannerPost.src = "/frontend/assets/images/skeletion/covers/acetona.png"
     }
@@ -57,8 +58,8 @@ function atualizarHTML(post_filtrado) {
     if(post_filtrado.id_postagem == 9){
         bannerPost.src = "/frontend/assets/images/skeletion/covers/alcool.png"
     }
-    
-    // bannerPost.src = post_filtrado.banner
+*/
+    bannerPost.src = post_filtrado.banner
 
     atualizarElemento('.titulo-principal', post_filtrado.nome_produto);
     atualizarElemento('.introducao', post_filtrado.introducao);
