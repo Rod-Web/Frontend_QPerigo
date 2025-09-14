@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+
+}
+
 main {
     display: flex;
     width: 100%;
@@ -24,8 +29,6 @@ main {
 }
 
 .indice nav ul li a {
-        list-style-type: circle;
-
     color: #352e37;
     opacity: 75%;
     font-style: italic;
@@ -45,7 +48,13 @@ main {
  }
 
 
+.indiceat {
+    background-color: #D5BEF2;
+    opacity: 0.93;
+    transform: scale(0.99);
+    transform: translateX(5%);
 
+}
 
 
 
@@ -179,7 +188,15 @@ h1 {
 
     .indice nav ul li {
         border: solid #D5BEF2 1px;
+        cursor: pointer;
+        padding: 0;
+    }
 
+    .indice nav ul li a {
+        display: block; /* faz o link ocupar toda a área do li */
+        width: 100%;
+        height: 100%;
+        padding: 15px;
     }
 
 }

@@ -83,14 +83,25 @@ function PreencherHTML(post_filtrado) {
 
     let li = document.querySelectorAll(".indice nav ul li a")
 
+    let lis = document.querySelectorAll(".indice nav ul li")
+
+    lis.forEach(indice => {
+        indice.onclick = ()=> indiceSelecionado(indice)
+    })
+
+    function indiceSelecionado(indice) {
+        lis.forEach(item => item.classList.remove("indiceat"));
+        indice.classList.add("indiceat")
+    }
 
     if (li.length === indice.length && indice.length === nomeInfoDb.length) {
     
         indice.forEach((indiceAtual, index) => {
     
-            
+            li[index].href = `#art${index}`;
             li[index].textContent = indiceAtual
             
+
             criarTagsEClass(post_filtrado, indiceAtual, nomeInfoDb, index)
 
         })
@@ -115,6 +126,7 @@ function criarTagsEClass(post_filtrado, indiceAtual, nomeInfoDb, index) {
     let p = document.createElement("p")
 
     art.classList.add("art")
+    art.id = `art${index}`
     
     const larguraTela = window.innerWidth;
     const divIndice = document.querySelector(".indice");
@@ -122,26 +134,11 @@ function criarTagsEClass(post_filtrado, indiceAtual, nomeInfoDb, index) {
     if (larguraTela < 768) {
         if(index == 0) 
         container.appendChild(divIndice);
-        divIndice.style.display = "flex";
         console.log("Div movida para dentro da container-principal");
     }
 
 
 
-    if(index == 4){
-            
-        const divideo = document.createElement("div");
-        divideo.classList.add("video")
-            
-            
-        let img = document.createElement("img");
-        img.src = "/frontend/assets/images/skeletion/cover-temp.png"
-        img.classList.add("video_experiencia")
-
-        divideo.appendChild(img)
-        art.appendChild(divideo)
-
-    }
 
     h3.textContent = indiceAtual
     const topicoAtual = nomeInfoDb[index]
@@ -149,6 +146,22 @@ function criarTagsEClass(post_filtrado, indiceAtual, nomeInfoDb, index) {
 
     art.appendChild(h3)
     art.appendChild(p)
+
+    if(index == 3){
+            
+        const divVideo = document.createElement("div");
+        divVideo.classList.add("video")
+            
+            
+        let img = document.createElement("img");
+        img.src = "/frontend/assets/images/skeletion/cover-temp.png"
+        img.classList.add("video_experiencia")
+
+        divVideo.appendChild(img)
+        art.appendChild(divVideo)
+
+    }
+
     container.appendChild(art)
 
 
