@@ -6,9 +6,10 @@
 
 .container-filtro{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 200px;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .titulo-gerais {
