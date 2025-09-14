@@ -5,19 +5,21 @@ function receberDados() {
     const dados = localStorage.getItem("postagens");
     if(dados) {
         const postagens = JSON.parse(dados);
-        console.log(postagens)
+        console.log("Dados recebidos do localStorage")
         return postagens
     } else {
         console.error("Erro: Dados não encontrados.");
         return [];
     }
+
 }
 
-function parametrosURl() {
+function parametrosURl(){
     let params = new URLSearchParams(window.location.search);
     let id = params.get('id');
+    
     if (id) {
-        console.log(id)   
+        console.log("parametro id capturado da url")   
         return id
     } else {
         console.error("Erro: Parâmetro 'id' não encontrado.");
@@ -25,57 +27,129 @@ function parametrosURl() {
     }
 }
 
-function funilDeDados(dados, id) {
+const pegarId = parametrosURl()
+const pegarDados = receberDados()
+
+
+function filtarPostAtual(dados, id) {
     const post_atual = dados.find(dado => dado.id_postagem == id);
-    console.log(post_atual)
+    console.log("Postagem filtrada")
         if (!post_atual) {
         console.error("Postagem não encontrada.");
     }
     return post_atual;
 }
 
-const pegarDados = receberDados();
-const pegarId = parametrosURl();
-
-if(pegarId) {
-    const post_filtrado = funilDeDados(pegarDados, pegarId)
+if(pegarId && pegarDados) {
+    const post_filtrado = filtarPostAtual(pegarDados, pegarId)
     if(post_filtrado) {
-        atualizarHTML(post_filtrado)
-    };
-};
-
-function atualizarHTML(post_filtrado) {
-    document.title = post_filtrado.nome_produto;
-
-    const bannerPost = document.querySelector('.img-produto');
-  /*
-    if(post_filtrado.id_postagem == 23){
-        bannerPost.src = "/frontend/assets/images/skeletion/covers/acetona.png"
+        PreencherHTML(post_filtrado)
+    } else {
+        console.error("Postagem não foi filtrada ou encontrada corretamente.");
     }
-    if(post_filtrado.id_postagem == 16){
-        bannerPost.src = "/frontend/assets/images/skeletion/covers/acido.png"
-    }
-    if(post_filtrado.id_postagem == 9){
-        bannerPost.src = "/frontend/assets/images/skeletion/covers/alcool.png"
-    }
-*/
-    bannerPost.src = post_filtrado.banner
-
-    atualizarElemento('.titulo-principal', post_filtrado.nome_produto);
-    atualizarElemento('.introducao', post_filtrado.introducao);
-    atualizarElemento('.composicao', post_filtrado.composicao);
-    atualizarElemento('.combinacoes', post_filtrado.combinacoes_perigosas);
-    atualizarElemento('.manipulacao', post_filtrado.manipulacao);
-    atualizarElemento('.armazenamento', post_filtrado.armazenamento);
-    
+} else {
+    console.error("Id da URL ou dados não foram capturados ou encontrados.");
 }
 
-function atualizarElemento(seletor, valor) {
-    const elementoClass = document.querySelector(seletor);
-    if(elementoClass) {
-        console.log(valor)
-        elementoClass.innerHTML = valor;
-    };
-};
+function PreencherHTML(post_filtrado) {
+
+    document.title = post_filtrado.nome_produto
+
+    const h1 = document.querySelector("h1")
+    h1.textContent = `${post_filtrado.nome_produto} :  Tudo que você precisa saber para uma limpeza segura.`
+
+    const data = document.querySelector(".data")
+    const banner = document.querySelector(".img_produto")
+
+    data.textContent = post_filtrado.data_publicacao.slice('T', 10)
+    banner.src = post_filtrado.banner
 
 
+    let indice = [
+        `O que é o ${post_filtrado.nome_produto}?`, 
+        `Do que é feito o ${post_filtrado.nome_produto}?`, 
+        `Como usar o ${post_filtrado.nome_produto}?`,
+        `Pode misturar quais produtos com o ${post_filtrado.nome_produto}?`, 
+        `Como guardar o ${post_filtrado.nome_produto}?`
+    ]
+
+    const nomeInfoDb = [
+        "introducao", 
+        "composicao", 
+        "manipulacao", 
+        "combinacoes_perigosas", 
+        "armazenamento"
+    ]
+
+    let li = document.querySelectorAll(".indice nav ul li a")
+
+
+    if (li.length === indice.length && indice.length === nomeInfoDb.length) {
+    
+        indice.forEach((indiceAtual, index) => {
+    
+            
+            li[index].textContent = indiceAtual
+            
+            criarTagsEClass(post_filtrado, indiceAtual, nomeInfoDb, index)
+
+        })
+
+    }  else {
+        console.error("Erro operacional. Verifique os dados ou reporte aos desenvolvedores.");
+        console.log("Quantidade de tag <li> ! de quantidade de indice.length e nomeInfoDb.length")
+}
+
+
+
+}
+
+function criarTagsEClass(post_filtrado, indiceAtual, nomeInfoDb, index) {
+    
+    const container = document.querySelector('.conteudo')
+
+    
+
+    let art = document.createElement("div")
+    let h3 = document.createElement("h3")
+    let p = document.createElement("p")
+
+    art.classList.add("art")
+    
+    const larguraTela = window.innerWidth;
+    const divIndice = document.querySelector(".indice");
+
+    if (larguraTela < 768) {
+        if(index == 0) 
+        container.appendChild(divIndice);
+        divIndice.style.display = "flex";
+        console.log("Div movida para dentro da container-principal");
+    }
+
+
+
+    if(index == 4){
+            
+        const divideo = document.createElement("div");
+        divideo.classList.add("video")
+            
+            
+        let img = document.createElement("img");
+        img.src = "/frontend/assets/images/skeletion/cover-temp.png"
+        img.classList.add("video_experiencia")
+
+        divideo.appendChild(img)
+        art.appendChild(divideo)
+
+    }
+
+    h3.textContent = indiceAtual
+    const topicoAtual = nomeInfoDb[index]
+    p.textContent = post_filtrado[topicoAtual]
+
+    art.appendChild(h3)
+    art.appendChild(p)
+    container.appendChild(art)
+
+
+}

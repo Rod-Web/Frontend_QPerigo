@@ -1,56 +1,171 @@
-.container-imagem-video {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  height: 82vh;
+main {
+    display: flex;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+    }   
+
+    .indice {
+        background-color: #D5BEF2;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        margin: 7px auto;
+    }
+
+
+    .artigo {
+        width: 90%;
+        margin: 0;
+    }
+
+    .indice nav ul li {
+        border: solid white 1px;
+    }
+
+
+    .art p {
+        letter-spacing: 1.5px;
+    }
+}
+@media screen and (min-width: 769px) {
+
+    .indice {
+        position: sticky;
+        top: 0; /* fixa no topo da viewport */
+        align-self: flex-start; /* se estiver dentro de um flex container */
+        padding: 15px 40px;
+        width: 25%;
+        z-index: 10; /* garante que fique acima de outros elementos */
+    }
+    .artigo {
+        width: 75%;
+        padding-right: 125px;
+    }
+
+
+
+    .indice nav ul li {
+        border: solid #D5BEF2 1px;
+
+    }
 
 }
 
-.container-imagem-video img {
-  border-radius: 20px;
-  height: 80vh;
-    box-shadow: 
-    0 0 15px rgba(100, 149, 237, 0.8), /* Azul */
-    0 0 30px rgba(147, 112, 219, 0.6); /* Roxo */
-  transition: all 0.4s ease;
+
+.titule_indice {
+    font-family: 'Sniglet', cursive;
+    color: #352E37;
+    font-weight: 400;
+    font-size: 1.2em;
+    margin: 20px;
+}
+
+.indice nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.indice nav ul li {
+    padding: 15px;
+    list-style-type: none;
+    transition: 0.5s;
+}
+
+.indice nav ul li a {
+    color: #352e37;
+    opacity: 75%;
+    font-style: italic;
+    text-decoration: none;
+    font-family: "Sansation", sans-serif;
+    position: relative;
+
+    
+}
+
+.indice nav ul li:hover {
+    opacity: 0.93;
+    transform: scale(0.99);
+    transform: translateX(5%);
+    background-color: #D5BEF2;
+
+ }
+
+
+
+
+
+
+h1 {
+    font-family: 'Sniglet', cursive;
+    color: #352E37;
+    font-weight: 400;
+    margin-top: 20px;
+    padding-left: 15px;
 
 }
 
-.container-imagem-video img:hover {
-  opacity: 0.9;
-  transform: translateY(-1%);
-  height: 79vh;
+.autor_data {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    gap: 20px;
+    font-family: "Sansation", sans-serif;
+    color: #1D1D1D;
+    margin-top: 15px;
+    opacity: 70%;
 }
 
-.titulo-principal {
-  font-family: 'Shanti', cursive;
-  line-height: 48px;
-  font-size: 32px;
-  color: #352E37;
-  letter-spacing: 1px;
-  margin-left: 20px;
-  position: relative;
-  display: inline-flex;
-  transition: transform 0.5s ease-out;
+.autor, .nome_autor {
+    font-size: 4vh;
 }
 
-.titulo-principal::after{
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 3px;
-  background-color:#352E37;
-  left: 0;
-  bottom: 0;
-  transition: width 0.5s ease-out;
+.nome_autor {
+    font-weight: bold;
 }
 
-.titulo-principal:hover {
-    transform: translateY(20%);
-    transform: translateX(10%);
-
-}
-.titulo-principal:hover::after {
-  width: 100%;
+.data {
+    padding-top: 5px;
+    font-size: 20px;
 }
 
+.banner {
+    margin-top: 15px;
+}
+.img_produto, .video_experiencia {
+    width: 100%;
+    
+}
+
+.art {
+    padding: 10px;
+}
+
+.art h3 {
+    color: #352E37;
+    font-family: 'Sniglet', cursive;
+    font-weight: 400;
+    font-size: 1.8em;
+    padding: 2px;
+}
+
+.art p {
+    font-family: "Sansation", sans-serif;
+    font-size: 1.2em;
+    color: #000000;
+    text-align: justify;
+    letter-spacing: 2.5px;
+    padding: 5px;
+    
+}
