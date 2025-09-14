@@ -3,66 +3,6 @@ main {
     width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        width: 100%;
-    }   
-
-    .indice {
-        background-color: #D5BEF2;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 60%;
-        margin: 7px auto;
-    }
-
-
-    .artigo {
-        width: 90%;
-        margin: 0;
-    }
-
-    .indice nav ul li {
-        border: solid white 1px;
-    }
-
-
-    .art p {
-        letter-spacing: 1.5px;
-    }
-}
-@media screen and (min-width: 769px) {
-
-    .indice {
-        position: sticky;
-        top: 0; /* fixa no topo da viewport */
-        align-self: flex-start; /* se estiver dentro de um flex container */
-        padding: 15px 40px;
-        width: 25%;
-        z-index: 10; /* garante que fique acima de outros elementos */
-    }
-    .artigo {
-        width: 75%;
-        padding-right: 125px;
-    }
-
-
-
-    .indice nav ul li {
-        border: solid #D5BEF2 1px;
-
-    }
-
-}
-
-
 .titule_indice {
     font-family: 'Sniglet', cursive;
     color: #352E37;
@@ -84,10 +24,12 @@ main {
 }
 
 .indice nav ul li a {
+        list-style-type: circle;
+
     color: #352e37;
     opacity: 75%;
     font-style: italic;
-    text-decoration: none;
+    text-decoration: underline;
     font-family: "Sansation", sans-serif;
     position: relative;
 
@@ -168,4 +110,76 @@ h1 {
     letter-spacing: 2.5px;
     padding: 5px;
     
+}
+
+
+@media screen and (max-width: 768px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+    }   
+
+    .autor_data {
+        gap: 20px;
+
+    }
+
+    .indice {
+        background-color: #D5BEF2;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 7px auto;
+    }
+
+
+    .artigo {
+        width: 90%;
+        margin: 0;
+    }
+
+    
+    .indice nav ul li {
+        list-style-type: disc;
+        list-style-position: inside;
+
+    }
+
+    .indice nav ul li::marker {
+        color:#352E37;
+    }
+
+
+    .art p {
+        letter-spacing: 1.5px;
+    }
+}
+@media screen and (min-width: 769px) {
+
+    .indice {
+        position: sticky;
+        top: 0; /* fixa no topo da viewport */
+        align-self: flex-start; /* se estiver dentro de um flex container */
+        padding: 15px 40px;
+        width: 25%;
+        z-index: 10; /* garante que fique acima de outros elementos */
+    }
+    .artigo {
+        width: 75%;
+        padding-right: 125px;
+    }
+
+
+
+    .indice nav ul li {
+        border: solid #D5BEF2 1px;
+
+    }
+
 }
