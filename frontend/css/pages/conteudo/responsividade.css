@@ -1,0 +1,72 @@
+@media screen and (max-width: 768px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }   
+
+    .indice {
+        background-color: #D5BEF2;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 7px auto;
+    }
+
+    .artigo {
+        width: 90%;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .indice {
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+        padding: 15px 40px;
+        width: 25%;
+        z-index: 10;
+    }
+    
+    .artigo {
+        width: 75%;
+        padding-right: 125px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .art p {
+        letter-spacing: 1.5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .indice nav ul li {
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+
+    .indice nav ul li::marker {
+        color:#352E37;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .indice nav ul li {
+        border: solid #D5BEF2 1px;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .indice nav ul li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+    }
+}
