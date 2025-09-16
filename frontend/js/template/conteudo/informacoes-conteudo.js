@@ -60,10 +60,23 @@ function PreencherHTML(post_filtrado) {
 
     const data = document.querySelector(".data")
     const banner = document.querySelector(".img_produto")
+    const box_banner = document.querySelector(".banner")
+    const span = document.createElement('span')
 
     data.textContent = post_filtrado.data_publicacao.slice('T', 10)
+    span.textContent = post_filtrado.periculosidade
+    if(post_filtrado.periculosidade.toLowerCase() === "perigo".toLowerCase()) {
+        span.style.backgroundColor = 'red';
+    } else if (post_filtrado.periculosidade.toLowerCase() === "atenção".toLowerCase()) {
+        span.style.backgroundColor = 'yellow'
+        span.style.color = 'black'
+    } else {
+        span.style.backgroundColor = 'green'
+    }
     banner.src = post_filtrado.banner
 
+    span.classList.add("banner-badge")
+    box_banner.appendChild(span)
 
     let indice = [
         `O que é o ${post_filtrado.nome_produto}?`, 
