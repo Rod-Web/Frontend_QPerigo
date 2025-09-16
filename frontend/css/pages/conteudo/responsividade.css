@@ -39,6 +39,10 @@ main {
     width: 100%;
     margin: 0;
   }
+
+  .banner-badge {
+    font-size: 12px;
+  }
   
   .indice nav ul li {
     list-style-type: none;
