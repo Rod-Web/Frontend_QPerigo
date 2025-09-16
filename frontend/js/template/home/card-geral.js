@@ -6,14 +6,15 @@ export function cardGeral(data) {
     // Criar badge de acessos
     const badge = document.createElement('span');
     badge.className = 'card-badge';
-    badge.textContent = `${data.acessos} visualizações`;
-    if(data.acessos == 0) {
+    badge.textContent = `${data.periculosidade}`;
+    if(data.periculosidade.toLowerCase() === "perigo".toLowerCase()) {
         badge.style.backgroundColor = 'red';
     } else {
-        if(data.acessos == 1) {
-        badge.style.backgroundColor = 'yellow'
+        if(data.periculosidade.toLowerCase() === "atenção".toLowerCase()) {
+            badge.style.backgroundColor = 'yellow'
+            badge.style.color = 'black'
         } else {
-        badge.style.backgroundColor = 'green'
+            badge.style.backgroundColor = 'green'
         }
     }
 
@@ -50,7 +51,7 @@ export function cardGeral(data) {
     // Criar link "Saiba Mais"
     const link = document.createElement('a');
     link.className = 'card-link';
-    link.textContent = 'Saiba Mais';
+    link.textContent = 'Continuar lendo';
     link.href = `/frontend/conteudo.html?id=${data.id_postagem}`;
     
     // Montar a estrutura do card

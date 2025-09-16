@@ -24,6 +24,7 @@ export async function carregarDados() {
                 banner: postagem.banner,
                 acessos: postagem.acessos,
                 armazenamento: postagem.armazenamento,
+                periculosidade: postagem.periculosidade
             }));
             localStorage.setItem("postagens", JSON.stringify(postagens));            
         } catch (error) {
