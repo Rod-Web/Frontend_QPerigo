@@ -9,13 +9,17 @@ export function configuracaoFiltro(atualizarPagina) {
         btn.addEventListener("click", () => {
             const botaoId = parseInt(btn.id);
             const botaoAtiv = btn.classList.contains("active");
-
+            const p = document.querySelector('.titulo-filtro')
+            const text = btn.querySelector("h3").textContent
+            
             botoes.forEach((b) => b.classList.remove("active"));
             valorFiltro = [];
+            p.textContent = ""
 
             if (!botaoAtiv) {
                 btn.classList.add("active");
                 valorFiltro.push(botaoId);
+                p.textContent = `Filtrando por: ${text}`
             }
 
             atualizarPagina();
@@ -33,11 +37,3 @@ export function aplicarFiltro() {
     }
 }
 
-export function configurarToggleFiltro() {
-    const filtroIcon = document.getElementById("filtro-icon");
-    const filterOptionsDiv = document.getElementById("opcoes-filtro");
-
-    filtroIcon.addEventListener("click", () => {
-        filterOptionsDiv.classList.toggle("show");
-    });
-}

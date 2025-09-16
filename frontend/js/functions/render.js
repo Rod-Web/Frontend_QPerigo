@@ -1,9 +1,9 @@
-import { postagensFiltradas, aplicarFiltro, configurarToggleFiltro } from "./filtros.js";
+import { postagensFiltradas, aplicarFiltro } from "./filtros.js";
 import { cardGeral } from "../template/home/card-geral.js";
 import { postagens } from "./api.js";
+
 export function atualizarPagina() {
     aplicarFiltro();
-    configurarToggleFiltro();
     renderizarSecaoGeral();
 }
 

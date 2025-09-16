@@ -24,6 +24,18 @@
     font-weight: 700;      /* Negrito */
 }
 
+.titulo-filtro {
+    display: flex;          /* Layout flexbox */
+    align-items: center;    /* Alinha itens verticalmente */
+    font-family: 'Segoe UI', sans-serif;
+    gap: 10px;             /* Espaço entre elementos filhos */
+    color: #453861ad;
+    font-size: 18px;       /* Tamanho da fonte */
+    margin-bottom: 15px;   /* Margem inferior */
+    font-weight: 700;      /* Negrito */
+
+}
+
 .icons {
     width: 28px;          /* Largura do ícone */
     height: 28px;         /* Altura do ícone */
