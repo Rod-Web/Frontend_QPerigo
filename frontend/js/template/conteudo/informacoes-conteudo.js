@@ -1,4 +1,6 @@
 import { btnEsperto } from "../../components/global/rolagem-topo.js";
+import { formatDate } from "./format-data.js";
+
 btnEsperto()
 
 function receberDados() {
@@ -62,7 +64,8 @@ function PreencherHTML(post_filtrado) {
     const banner = document.querySelector(".img_produto")
     const box_banner = document.querySelector(".banner")
 
-    data.textContent = post_filtrado.data_publicacao.slice('T', 10)
+    const dataformatada = formatDate(post_filtrado.data_publicacao)
+    data.textContent = dataformatada
     banner.src = post_filtrado.banner
 
 
