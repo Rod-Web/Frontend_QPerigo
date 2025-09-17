@@ -61,22 +61,53 @@ function PreencherHTML(post_filtrado) {
     const data = document.querySelector(".data")
     const banner = document.querySelector(".img_produto")
     const box_banner = document.querySelector(".banner")
-    const span = document.createElement('span')
 
     data.textContent = post_filtrado.data_publicacao.slice('T', 10)
-    span.textContent = post_filtrado.periculosidade
-    if(post_filtrado.periculosidade.toLowerCase() === "perigo".toLowerCase()) {
-        span.style.backgroundColor = 'red';
-    } else if (post_filtrado.periculosidade.toLowerCase() === "atenção".toLowerCase()) {
-        span.style.backgroundColor = 'yellow'
-        span.style.color = 'black'
-    } else {
-        span.style.backgroundColor = 'green'
-    }
     banner.src = post_filtrado.banner
 
-    span.classList.add("banner-badge")
-    box_banner.appendChild(span)
+
+    const divPericulosidade = document.createElement('div');
+    const icon = document.createElement('img');
+    const badge = document.createElement('span');
+
+    divPericulosidade.className = 'box-badge';
+    icon.className = 'icon-badge';
+    badge.className = 'card-badge';
+
+    badge.textContent = post_filtrado.periculosidade
+    const nivel = post_filtrado.periculosidade.trim().toLowerCase();
+
+    switch (nivel) {
+        case "perigo":
+        
+            icon.src = "/frontend/assets/images/icons/periculosidade/perigo.svg"
+            divPericulosidade.style.backgroundColor = 'red';
+
+        break;
+        case "atenção":
+
+            icon.src = "/frontend/assets/images/icons/periculosidade/atencao.svg"
+            divPericulosidade.style.backgroundColor = 'yellow'
+            badge.style.color = 'black'
+
+        break;
+        case "seguro":
+
+            icon.src = "/frontend/assets/images/icons/periculosidade/seguro.svg"
+            divPericulosidade.style.backgroundColor = 'green'
+        
+        break;
+        default:
+
+            console.log("Erro na separação de cor dos badges")
+        break;
+    }
+
+
+
+    divPericulosidade.appendChild(icon)
+    divPericulosidade.appendChild(badge)
+    box_banner.appendChild(divPericulosidade)
 
     let indice = [
         `O que é o ${post_filtrado.nome_produto}?`, 

@@ -3,20 +3,52 @@ export function cardGeral(data) {
     const card = document.createElement('div');
     card.className = 'card';
     
-    // Criar badge de acessos
+    // Criar badge de periculosidade
+    const divPericulosidade = document.createElement('div');
+    const icon = document.createElement('img');
     const badge = document.createElement('span');
+
+    divPericulosidade.className = 'box-badge';
+    icon.className = 'icon-badge';
     badge.className = 'card-badge';
-    badge.textContent = `${data.periculosidade}`;
-    if(data.periculosidade.toLowerCase() === "perigo".toLowerCase()) {
-        badge.style.backgroundColor = 'red';
-    } else {
-        if(data.periculosidade.toLowerCase() === "atenção".toLowerCase()) {
-            badge.style.backgroundColor = 'yellow'
+
+    badge.textContent = data.periculosidade
+    
+    const nivel = data.periculosidade.trim().toLowerCase();
+
+    switch (nivel) {
+        case "perigo":
+        
+            icon.src = "/frontend/assets/images/icons/periculosidade/perigo.svg"
+            icon.style.height = '20px'
+            divPericulosidade.style.backgroundColor = 'red';
+
+        break;
+        case "atenção":
+
+            icon.src = "/frontend/assets/images/icons/periculosidade/atencao.svg"
+            icon.style.height = '20px'
+            divPericulosidade.style.backgroundColor = 'yellow'
             badge.style.color = 'black'
-        } else {
-            badge.style.backgroundColor = 'green'
-        }
+
+        break;
+        case "seguro":
+
+            icon.src = "/frontend/assets/images/icons/periculosidade/seguro.svg"
+            icon.style.height = '20px'
+            divPericulosidade.style.backgroundColor = 'green'
+        
+        break;
+        default:
+
+            console.log("Erro na separação de cor dos badges")
+        break;
     }
+
+
+    divPericulosidade.appendChild(icon)
+    divPericulosidade.appendChild(badge)
+
 
     
     // Criar imagem do banner
@@ -55,7 +87,7 @@ export function cardGeral(data) {
     link.href = `/frontend/conteudo.html?id=${data.id_postagem}`;
     
     // Montar a estrutura do card
-    card.appendChild(badge);
+    card.appendChild(divPericulosidade);
     card.appendChild(img);
     
     cardContent.appendChild(title);
