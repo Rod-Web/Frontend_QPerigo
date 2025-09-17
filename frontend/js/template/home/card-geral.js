@@ -20,14 +20,12 @@ export function cardGeral(data) {
         case "perigo":
         
             icon.src = "/frontend/assets/images/icons/periculosidade/perigo.svg"
-            icon.style.height = '20px'
             divPericulosidade.style.backgroundColor = 'red';
 
         break;
         case "atenção":
 
             icon.src = "/frontend/assets/images/icons/periculosidade/atencao.svg"
-            icon.style.height = '20px'
             divPericulosidade.style.backgroundColor = 'yellow'
             badge.style.color = 'black'
 
@@ -35,7 +33,6 @@ export function cardGeral(data) {
         case "seguro":
 
             icon.src = "/frontend/assets/images/icons/periculosidade/seguro.svg"
-            icon.style.height = '20px'
             divPericulosidade.style.backgroundColor = 'green'
         
         break;

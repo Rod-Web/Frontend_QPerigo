@@ -40,8 +40,12 @@ main {
     margin: 0;
   }
 
-  .banner-badge {
+  .card-badge {
     font-size: 12px;
+  }
+
+  .icon-badge {
+    height: 20px;
   }
   
   .indice nav ul li {
