@@ -91,7 +91,7 @@ h1::after {
 .art h3 {
   color: var(--primary-color);
   font-family: 'Sniglet', cursive;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1.5em;
   padding: 15px 0 10px 0;
   margin-top: 25px;
@@ -127,7 +127,7 @@ h1::after {
   margin-right: 8px;
   color: var(--accent-color);
   font-family: 'Sniglet', cursive;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 .conteudo {
