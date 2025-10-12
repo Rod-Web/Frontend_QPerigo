@@ -1,6 +1,34 @@
 /* Objetivos */
 .base-objectives {
   display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.base-objectives h2 {
+  font-family: 'Sniglet', cursive;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 0 30px 0;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.base-objectives h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.objectives-container {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 25px;
@@ -12,7 +40,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   padding: 25px;
   flex: 1;
-  max-width: 30%;
+  min-width: 250px;
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
@@ -47,7 +75,7 @@
   margin-bottom: 20px;
 }
 
-.title-objetive h1 {
+.objective-number {
   font-family: 'Courier New', Courier, monospace;
   font-weight: 700;
   font-size: 2.5rem;
@@ -55,7 +83,7 @@
   margin-right: 15px;
 }
 
-.title-objetive h2 {
+.title-objetive h3 {
   font-family: 'Sniglet', cursive;
   font-size: 1.5rem;
   font-weight: 600;

@@ -9,10 +9,12 @@
   border-radius: 12px;
   margin: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  gap: 30px;
 }
 
 .about-img {
-  width: 48%;
+  flex: 1;
+  min-width: 300px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -25,6 +27,8 @@
 .about-img img {
   width: 100%;
   height: auto;
+  max-height: 400px;
+  object-fit: cover;
   border-radius: 10px;
   transition: transform 0.5s ease;
 }
@@ -35,8 +39,8 @@
 
 .about-data {
   flex: 1;
-  padding: 30px;
-  max-width: 48%;
+  padding: 20px;
+  min-width: 300px;
   text-align: justify;
 }
 
@@ -49,10 +53,11 @@
 .about-data .wrapper h1 {
   font-family: 'Sniglet', cursive;
   color: var(--primary-color);
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 800;
   position: relative;
   padding-bottom: 10px;
+  text-align: center;
 }
 
 .about-data .wrapper h1::after {
@@ -70,7 +75,7 @@
 .about-data p {
   font-family: 'Sansation', sans-serif;
   text-indent: 1em;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   line-height: 1.7;
   margin-bottom: 25px;
   color: var(--dark-color);
@@ -78,23 +83,41 @@
 
 .base-social-media {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 25px;
+  gap: 15px;
+}
+
+.base-social-media p {
+  font-family: 'Sansation', sans-serif;
+  color: var(--dark-color);
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .base-social-media a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
-  margin: 0 12px;
-  font-size: 1.5rem;
+  width: clamp(40px, 8vw, 45px);
+  height: clamp(40px, 8vw, 45px);
+  font-size: clamp(1.3rem, 3vw, 1.5rem);
   color: var(--dark-color);
-  background-color: var(--light-color);
+  background-color: white;
   border-radius: 50%;
   transition: all 0.3s ease;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
 }
 
 .base-social-media a:hover {
@@ -105,7 +128,7 @@
 }
 
 /* Divisor */
-.divider {
+.divisor {
   height: 2px;
   background: linear-gradient(to right, transparent, var(--accent-color), transparent);
   margin: 50px 20px;

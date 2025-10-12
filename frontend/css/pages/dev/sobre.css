@@ -39,3 +39,60 @@
   margin-bottom: 50px;
   color: var(--dark-color);
 }
+
+/* Metodologia do Projeto */
+.project-methodology {
+  margin: 40px 0;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+}
+
+.project-methodology h2 {
+  font-family: 'Sniglet', cursive;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.methodology-steps {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.step {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  padding: 25px 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step i {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.step h3 {
+  font-family: 'Shanti', sans-serif;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.step p {
+  font-family: 'Sansation', sans-serif;
+  color: var(--dark-color);
+  line-height: 1.6;
+}
