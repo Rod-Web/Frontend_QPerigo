@@ -87,6 +87,7 @@ h1::after {
 
 .img_produto, .video_experiencia {
   width: 100%;
+  height: 85vh;
   display: block;
   transition: transform 0.5s ease;
 }
