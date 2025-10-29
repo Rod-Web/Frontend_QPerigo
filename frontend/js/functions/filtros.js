@@ -15,7 +15,7 @@ export function configuracaoFiltro(atualizarPagina) {
     const botoes = document.querySelectorAll(".room");
     botoes.forEach((btn) => {
         btn.addEventListener("click", () => {
-            const botaoId = parseInt(btn.id);
+            const botaoId = btn.id;
             const botaoAtiv = btn.classList.contains("active");
             const p = document.querySelector('.titulo-filtro')
             const text = btn.querySelector("h3").textContent
@@ -77,7 +77,11 @@ export function aplicarFiltro() {
 
     // Aplica filtro por cômodo se houver
     if (filtroAtivo) {
-        resultado = resultado.filter(item => valorFiltro.includes(item.id_comodo));
+resultado = resultado.filter((item) =>
+  item.comodo_associado.some(
+    (comodo) => valorFiltro.includes(comodo) // comodo deve ser do mesmo tipo que os itens de valorFiltro
+  )
+);
     }
 
     // Atualiza o array final

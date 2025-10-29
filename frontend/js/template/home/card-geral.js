@@ -11,34 +11,41 @@ export function cardGeral(data) {
     divPericulosidade.className = 'box-badge';
     icon.className = 'icon-badge';
     badge.className = 'card-badge';
-
-    badge.textContent = data.periculosidade
     
     const nivel = data.periculosidade.trim().toLowerCase();
 
     switch (nivel) {
-        case "perigo":
-        
-            icon.src = "/frontend/assets/images/icons/periculosidade/perigo.svg"
-            divPericulosidade.style.backgroundColor = 'red';
-
+        case "vermelho":
+            icon.src = "/frontend/assets/images/icons/periculosidade/perigo.svg";
+            divPericulosidade.style.backgroundColor = "red";
+            badge.textContent = "Perigo";
         break;
-        case "atenção":
-
-            icon.src = "/frontend/assets/images/icons/periculosidade/atencao.svg"
-            divPericulosidade.style.backgroundColor = 'yellow'
-            badge.style.color = 'black'
-
+        case "laranja":
+            icon.src = "/frontend/assets/images/icons/periculosidade/perigo.svg";
+            divPericulosidade.style.backgroundColor = "red";
+            badge.textContent = "Perigo";
         break;
-        case "seguro":
 
-            icon.src = "/frontend/assets/images/icons/periculosidade/seguro.svg"
-            divPericulosidade.style.backgroundColor = 'green'
-        
+        case "amarelo":
+            icon.src = "/frontend/assets/images/icons/periculosidade/atencao.svg";
+            divPericulosidade.style.backgroundColor = "yellow";
+            badge.style.color = "black";
+            badge.textContent = "Atenção";
         break;
+
+        case "azul":
+            icon.src = "/frontend/assets/images/icons/periculosidade/seguro.svg";
+            divPericulosidade.style.backgroundColor = "green";
+            badge.textContent = "Seguro";
+        break;
+        case "verde":
+            icon.src = "/frontend/assets/images/icons/periculosidade/seguro.svg";
+            divPericulosidade.style.backgroundColor = "green";
+            badge.textContent = "Seguro";
+        break;
+
         default:
-
-            console.log("Erro na separação de cor dos badges")
+            console.log("Erro na separação de cor dos badges");
         break;
     }
 
@@ -52,12 +59,7 @@ export function cardGeral(data) {
 
     const img = document.createElement('img');
     img.className = 'card-image';
-    img.src = data.banner; // Usa o banner padrão para outros casos
-
-    
-
-
-
+    img.src = data.banner || '/frontend/assets/images/skeletion/cover-temp.png';
     img.alt = data.nome_produto;
     
     // Criar conteúdo do card

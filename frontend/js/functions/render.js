@@ -10,7 +10,8 @@ export function atualizarPagina() {
 export function renderizarSecaoDestaque() {
         const container = document.querySelector(".cards-home-destaque");
         const destaque = [...postagens]
-            .sort((a,b) => b.acessos - a.acessos).slice(0,6)
+            .sort((a, b) => a.nome_produto.localeCompare(b.nome_produto))
+            .slice(0,6)
         destaque.forEach(card => {
             let cardfei = criarCardComListener(cardGeral(card), card.id_postagem)
             container.appendChild(cardfei)
