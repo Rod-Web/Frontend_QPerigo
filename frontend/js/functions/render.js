@@ -1,6 +1,5 @@
 import { postagensFiltradas, aplicarFiltro } from "./filtros.js";
 import { cardGeral } from "../template/home/card-geral.js";
-import { postagens } from "./api.js";
 
 export function atualizarPagina() {
     aplicarFiltro();
@@ -9,7 +8,7 @@ export function atualizarPagina() {
 
 export function renderizarSecaoDestaque() {
         const container = document.querySelector(".cards-home-destaque");
-        const destaque = [...postagens]
+        const destaque = [...postagensFiltradas]
           .filter(
             (item) =>
               item.periculosidade.includes("vermelho") ||
@@ -32,7 +31,7 @@ export function renderizarSecaoGeral() {
     container.innerHTML = "";
 
         
-    const gerais = [...postagens]
+    const gerais = [...postagensFiltradas]
         .sort((a, b) => a.nome_produto.localeCompare(b.nome_produto))
     const itemPerPage = 6;
     let currentIndex = 0;
