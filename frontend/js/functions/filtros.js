@@ -44,7 +44,7 @@ export function configuracaoFiltro(atualizarPagina) {
         clearTimeout(temporizador);
 
         temporizador = setTimeout(() => {
-            const busca = TirarAcento(input.value.trim().toLowerCase());
+            const busca = TirarAcento(input.value.toLowerCase());
 
             if (busca !== "") {
                 PostagensBuscada = busca;
