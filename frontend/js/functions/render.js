@@ -10,8 +10,9 @@ export function atualizarPagina() {
 export function renderizarSecaoDestaque() {
         const container = document.querySelector(".cards-home-destaque");
         const destaque = [...postagens]
-            .sort((a, b) => a.nome_produto.localeCompare(b.nome_produto))
-            .slice(0,6)
+          .filter((item) => item.periculosidade.includes("vermelho"))
+          .sort((a, b) => a.nome_produto.localeCompare(b.nome_produto))
+          .slice(0, 6);
         destaque.forEach(card => {
             let cardfei = criarCardComListener(cardGeral(card), card.id_postagem)
             container.appendChild(cardfei)
@@ -26,10 +27,8 @@ export function renderizarSecaoGeral() {
 
     container.innerHTML = "";
 
-    const geraisInicial = [...postagens]
-        .filter((item) => item.periculosidade.includes("vermelho"))
         
-    const gerais = [...geraisInicial]
+    const gerais = [...postagens]
         .sort((a, b) => a.nome_produto.localeCompare(b.nome_produto))
     const itemPerPage = 6;
     let currentIndex = 0;
