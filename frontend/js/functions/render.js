@@ -10,7 +10,11 @@ export function atualizarPagina() {
 export function renderizarSecaoDestaque() {
         const container = document.querySelector(".cards-home-destaque");
         const destaque = [...postagens]
-          .filter((item) => item.periculosidade.includes("vermelho"))
+          .filter(
+            (item) =>
+              item.periculosidade.includes("vermelho") ||
+              item.periculosidade.includes("laranja")
+          )
           .sort((a, b) => a.nome_produto.localeCompare(b.nome_produto))
           .slice(0, 6);
         destaque.forEach(card => {
