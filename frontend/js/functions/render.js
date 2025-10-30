@@ -26,7 +26,10 @@ export function renderizarSecaoGeral() {
 
     container.innerHTML = "";
 
-    const gerais = [...postagensFiltradas]
+    const geraisInicial = [...postagens]
+        .filter((item) => item.periculosidade.includes("vermelho"))
+        
+    const gerais = [...geraisInicial]
         .sort((a, b) => a.nome_produto.localeCompare(b.nome_produto))
     const itemPerPage = 6;
     let currentIndex = 0;
