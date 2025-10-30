@@ -1,6 +1,6 @@
 import { postagensFiltradas, aplicarFiltro } from "./filtros.js";
 import { cardGeral } from "../template/home/card-geral.js";
-
+import { postagens } from "./api.js";
 export function atualizarPagina() {
     aplicarFiltro();
     renderizarSecaoGeral();
@@ -8,7 +8,7 @@ export function atualizarPagina() {
 
 export function renderizarSecaoDestaque() {
         const container = document.querySelector(".cards-home-destaque");
-        const destaque = [...postagensFiltradas]
+        const destaque = [...postagens]
           .filter(
             (item) =>
               item.periculosidade.includes("vermelho") ||
